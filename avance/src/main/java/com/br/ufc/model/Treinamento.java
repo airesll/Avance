@@ -19,10 +19,10 @@ public class Treinamento {
 	private Date dataInicial;
 	private Date dataFinal;
 	
-	//lista de diretorio dos videos
-	//um teste pode ter varios videos
 	@ManyToMany(mappedBy = "treinamentos")
 	private List<Video> caminhoDosVideos;
+	private List<Usuario> usuarios;
+	private List<Aviso> avisos;
 	
 	@OneToOne(mappedBy = "treinamento", cascade = CascadeType.ALL)
 	private Teste teste;
@@ -57,5 +57,17 @@ public class Treinamento {
 	}
 	public void setTeste(Teste teste) {
 		this.teste = teste;
+	}
+	public List<Usuario> getUsuarios() {
+		return usuarios;
+	}
+	public void setUsuarios(List<Usuario> usuarios) {
+		this.usuarios = usuarios;
+	}
+	public List<Aviso> getAvisos() {
+		return avisos;
+	}
+	public void setAvisos(List<Aviso> avisos) {
+		this.avisos = avisos;
 	}
 }
