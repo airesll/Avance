@@ -1,5 +1,11 @@
 package com.br.ufc.repository;
 
-public class AvisoRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
+import com.br.ufc.model.Aviso;
+
+@Repository
+public interface AvisoRepository extends JpaRepository<Aviso, Long> {
+	Aviso findByIdAviso(Long idAviso);
 }

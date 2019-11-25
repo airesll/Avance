@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>VirtualRH</title>
+ <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
+ <script src="/js/bootstrap.min.js"></script>
+</head>
+<body>
+	
+	
+	<table class="table">
+  <thead>
+    <tr>
+    
+ 	 <th scope="col">Id</th>
+     <th scope="col">Descrição </th>
+      <th scope="col">Data</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each = "aviso : ${listaDeAvisos}">
+      <td th:text="${aviso.id}"></td>
+      <td th:text="${aviso.descricao}"></td>
+      <td th:text="${aviso.dataAviso}"></td>
+      
+      <td> 
+      	<a th:href="@{/aviso/excluir/{id}(id = ${aviso.id})}">
+      		<button type=button class="btn btn-danger">Remover</button>
+      	</a>
+      </td>
+      </tr>
+  </tbody>
+</table>
+	
+ <script src="/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>VirtualRH</title>
+</head>
+<body>
+	<h3>Ola colaboradores do VirtualRH</h3>
+	
+	<form action="/cadastro/salvar" method="POST">
+	
+	Nome: <input type="text" name="nome"> <br>
+	Email: <input type="text" name="email"> <br>
+	Login: <input type="text" name="login"> <br>
+	Senha: <input type="text" name="senha"> <br>
+	Data de nascimento: <input type="text" name="dataNascimentoo"> <br>
+	CPF: <input type="text" name="cpf"> <br>
+	
+	<input type="submit" value="Cadastrar">
+	
+	
+	
+	
+	
+	</form>
+	
+	private Long id;
+	private String nome;
+	private String cpf;
+	private Date dataNascimento;
+	private String email;
+	private String login;
+	private String senha;
+	
+</body>
+</html>

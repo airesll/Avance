@@ -11,16 +11,16 @@ import javax.persistence.Id;
 public class Aviso {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	private Long idAviso;
 	private String descricao;
 	private Date dataAviso;
 	
 	//GETS AND SETS
 	public Long getId() {
-		return id;
+		return idAviso;
 	}
-	public void setId(Long id) {
-		this.id = id;
+	public void setId(Long idAviso) {
+		this.idAviso = idAviso;
 	}
 	public String getDescricao() {
 		return descricao;

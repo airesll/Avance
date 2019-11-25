@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>VirtualRH</title>
+ <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
+ <script src="/js/bootstrap.min.js"></script>
+</head>
+<body>
+	
+	
+	<table class="table">
+  <thead>
+    <tr>
+    
+ 	 <th scope="col">Id</th>
+     <th scope="col">nome </th>
+      <th scope="col">CPF</th>
+      <th scope="col">Email</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each = "usuario : ${listaDeFuncionarios}">
+      <td th:text="${usuario.id}"></td>
+      <td th:text="${usuario.nome}"></td>
+      <td th:text="${usuario.cpf}"></td>
+      <td th:text="${usuario.email }"></td>
+      <td> 
+      	<a th:href="@{/cadastro/excluir/{id}(id = ${usuario.id})}">
+      		<button type=button class="btn btn-danger">Remover</button>
+      	</a>
+      </td>
+      </tr>
+  </tbody>
+</table>
+	
+ <script src="/js/bootstrap.min.js"></script>
+</body>
+</html>

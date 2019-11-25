@@ -23,15 +23,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		http.csrf().disable().authorizeRequests()
 		
 		//todos podem acessar
-		.antMatchers("/novoCadastro").permitAll()
-		.antMatchers("/cliente/salvar").permitAll()
 		.antMatchers("/").permitAll()
+		.antMatchers("/questao").permitAll()
+		.antMatchers("/questao/salvar").permitAll()
+		.antMatchers("/questao/listar").permitAll()
+		.antMatchers("/questao/listar").permitAll()
+		.antMatchers("/questao/excluir/{id}").permitAll()
 		
-		.antMatchers("/gerente/cadastrarNovoPrato").hasAuthority("ROLE_GERENTE")
-		.antMatchers("/gerente/salvarPrato").hasAnyAuthority("ROLE_GERENTE")
-		.antMatchers("/gerente/listaDePratos").hasAnyAuthority("ROLE_GERENTE")
-		.antMatchers("/gerente/excluirPrato").hasAnyAuthority("ROLE_GERENTE")
-		.antMatchers("/atualizarPrato/").hasAnyAuthority("ROLE_GERENTE")
+		//.antMatchers("/gerente/cadastrarNovoPrato").hasAuthority("ROLE_GERENTE")
+		
+		
 		//qualquer outra requisiçao tem que ser autenticada
 		.anyRequest().authenticated()
 		
