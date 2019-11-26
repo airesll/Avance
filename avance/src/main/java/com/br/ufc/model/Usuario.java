@@ -33,6 +33,12 @@ public class Usuario implements UserDetails{
 		    {@JoinColumn(name="role_id")})
 	private List<Role> roles;
 	
+	@ManyToMany
+	@JoinTable(name="usuarios_treinamentos", joinColumns=
+			{@JoinColumn(name="usuario_id")}, inverseJoinColumns=
+			{@JoinColumn(name="treinamento_id")})
+	private List<Treinamento> treinamentos;
+	
 	//GETS AND SETS
 	public Long getId() {
 		return id;

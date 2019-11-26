@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Aviso {
@@ -14,6 +16,10 @@ public class Aviso {
 	private Long idAviso;
 	private String descricao;
 	private Date dataAviso;
+	
+	@ManyToOne
+	@JoinColumn(name="idTreinamento")
+	private Treinamento treinamento;
 	
 	//GETS AND SETS
 	public Long getId() {
@@ -33,5 +39,11 @@ public class Aviso {
 	}
 	public void setDataAviso(Date dataAviso) {
 		this.dataAviso = dataAviso;
+	}
+	public Treinamento getTreinamento() {
+		return treinamento;
+	}
+	public void setTreinamento(Treinamento treinamento) {
+		this.treinamento = treinamento;
 	}
 }

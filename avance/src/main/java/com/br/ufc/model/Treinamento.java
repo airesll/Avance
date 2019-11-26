@@ -5,10 +5,12 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -21,7 +23,12 @@ public class Treinamento {
 	
 	@ManyToMany(mappedBy = "treinamentos")
 	private List<Video> caminhoDosVideos;
+	
+	@ManyToMany(mappedBy = "treinamentos")
 	private List<Usuario> usuarios;
+	
+	@OneToMany(mappedBy = "treinamento", targetEntity = Aviso.class, 
+			fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<Aviso> avisos;
 	
 	@OneToOne(mappedBy = "treinamento", cascade = CascadeType.ALL)
