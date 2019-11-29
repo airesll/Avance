@@ -23,6 +23,7 @@ public class Usuario implements UserDetails{
 	private String nome;
 	private String cpf;
 	private Date dataNascimento;
+	private String cargo;
 	private String email;
 	private String login;
 	private String senha;
@@ -122,5 +123,11 @@ public class Usuario implements UserDetails{
 	public boolean isEnabled() {
 		// TODO Auto-generated method stub
 		return true;
+	}
+	public String getCargo() {
+		return cargo;
+	}
+	public void setCargo(String cargo) {
+		this.cargo = cargo;
 	}
 }

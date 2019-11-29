@@ -18,6 +18,7 @@ public class Video {
 	//os videos ficaram em disco
 	//no banco de daos ficara salvo somente os caminhos
 	private String caminhoDoVideo;
+	private String descricao;
 	
 	//um video pode estar em varios treinamentos
 	@ManyToMany
@@ -46,5 +47,11 @@ public class Video {
 	}
 	public void setTreinamentos(List<Treinamento> treinamentos) {
 		this.treinamentos = treinamentos;
+	}
+	public String getDescricao() {
+		return descricao;
+	}
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 }
