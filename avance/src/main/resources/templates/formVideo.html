@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h3>Ola colaboradores do VirtualRH</h3>
+	
+	<form action="/video/salvar" method="POST" th:object="${video}">
+		Titulo: <input type="text" th:field = "*{titulo}" placeholder="titulo do video"> <br>
+		Descrição: <input type="text" th:field = "*{descricao}" placeholder="Descricao do video"> <br>
+		URL: <input type="text" th:field = "*{url}" placeholder="URL do video">
+		<input type="submit" value="salvar">
+	</form>
+</body>
+</html>

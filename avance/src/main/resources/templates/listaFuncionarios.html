@@ -28,7 +28,12 @@
       <td th:text="${usuario.email }"></td>
       <td> 
       	<a th:href="@{/cadastro/excluir/{id}(id = ${usuario.id})}">
-      		<button type=button class="btn btn-danger">Remover</button>
+      		<button class="btn btn-danger">Remover</button>
+      	</a>
+      </td>
+        <td> 
+      	<a th:href="@{/cadastro/atualizar/{id}(id = ${usuario.id})}">
+      		<button  class="btn btn-primary">Atualizar</button>
       	</a>
       </td>
       </tr>
